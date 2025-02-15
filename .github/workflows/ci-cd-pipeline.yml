@@ -1,0 +1,36 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if it's different
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Specify your Python version
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # If you have dependencies
+
+      - name: Run tests
+        run: |
+          # Add commands to run your tests here
+          echo "No tests specified."  # Placeholder for test command
+
+      - name: Deploy
+        run: |
+          # Add commands to deploy your application
+          echo "Deployment step goes here."  # Placeholder for deployment command

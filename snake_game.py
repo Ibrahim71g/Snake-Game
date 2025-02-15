@@ -89,8 +89,8 @@ class Game:
 # Initialize the window
 stdscr = curses.initscr()
 curses.curs_set(0)
-sh, sw = stdscr.getmaxyx()  # get height and width of window
-
+sh = 20  # Set desired height
+sw = 40  # Set desired width
 # Start the game
 game = Game(sh, sw)
 game.start()
